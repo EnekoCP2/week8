@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HTML5 File Drag & Drop API</title>
+<link rel="stylesheet" type="text/css" media="all" href="filedrag.css" />
+</head>
+<body>
+
+<form id="upload" method="POST"  
+                            enctype="multipart/form-data">
+<fieldset>
+<legend>Datos del cliente</legend>
+<p> 
+   <div>
+      <label for="fileselect">Nombre:</label>
+      <input type="text" id="nombre"  value="" placeholder="Indica tu nombre" name="nombre"  required="required"  autofocus>
+   </div>
+</p>
+<p>
+   <div>
+      <label for="fileselect">Telefono:</label>
+      <input type="tel" id="tlf"  value="" placeholder="Patron : 123-456-789" name="tlf" pattern="[0-9]{9}" required="required">
+   </div>
+</p>
+<p>
+   <div>
+      
+      <label for="fileselect">E-mail:</label>
+      <input type="email" id="email"  value="" placeholder="Introduce email" name="email"  
+       pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required="required">
+
+   </div>
+   
+</p>
+
+</fieldset>
+
+<fieldset>
+   <legend>Libros</legend>
+   
+   <div>
+      <input type="text" id="libro" value="" name="libro">
+      <label for="fileselect">Cantidad (Max 5):</label>
+      <input type="number" name="cont" max="5" min="1" step="1">
+      
+   </div>
+   </fieldset>
+
+<fieldset>
+   <legend>File Upload</legend> 
+
+   <div>
+      <label for="fileselect">Elige los ficheros a subir:</label>
+      <input type="file" id="fileselect" name="fileselect" multiple />
+      <div id="filedrag">or drop files here</div>
+   </div>
+
+</fieldset>
+
+<div>
+   <p>
+      <input type="submit" id="enviar" value="Enviar">
+
+   </p>
+</div>
+</form>
+
+<div id="messages"><p>Mensajes de estado</p></div>
+<script src="filedrag.js"></script>
+
+<div id="resu">
+   <p>Resultados del formulario</p>
+
+   <ol type=”A” >
+      <li id="nomb"></li>
+      <li id="tele"></li>
+      <li id="mail"></li>
+      <li id="book"></li>
+      <li id="can"></li>
+      <li>Imagenes: <img id="portada"></img> </li>
+    </ol>
+
+
+</div>
+
+
+
+</body>
+</html>
